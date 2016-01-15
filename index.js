@@ -55,7 +55,7 @@
 	  ' Hello World '
 	), document.getElementById('root'));
 
-	document.write('it works!');
+	// document.write('it works!')
 
 /***/ },
 /* 1 */
