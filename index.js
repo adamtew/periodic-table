@@ -1,5 +1,5 @@
 var React = require('react')
-var render = require('react-dom').render
+var reactDOM = require('react-dom')
 
 var Root = React.createClass({
 	render: function() {
@@ -7,7 +7,7 @@ var Root = React.createClass({
 	}
 })
 
-render(
-	<Root />,
+reactDOM.render(
+	<h1> Hello World </h1>,
 	document.getElementById('root');
 )
