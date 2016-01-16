@@ -46,16 +46,250 @@
 
 	'use strict';
 
-	var React = __webpack_require__(158);
-	var ReactDOM = __webpack_require__(86);
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	ReactDOM.render(React.createElement(
-	  'h1',
-	  null,
-	  ' Hello World '
+	var _react = __webpack_require__(158);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var _require = __webpack_require__(86);
+
+	var render = _require.render;
+
+	//------------------------------------------------------------------------------
+	// COMPONENTS
+	//------------------------------------------------------------------------------
+
+	var Element = function (_Component) {
+		_inherits(Element, _Component);
+
+		function Element() {
+			_classCallCheck(this, Element);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(Element).apply(this, arguments));
+		}
+
+		_createClass(Element, [{
+			key: 'render',
+			value: function render() {
+				var _props = this.props;
+				var children = _props.children;
+				var number = _props.number;
+				var name = _props.name;
+				var acronym = _props.acronym;
+				var weight = _props.weight;
+
+				return _react2.default.createElement(
+					'div',
+					{ style: { height: 35, width: 35, border: '1px solid silver', padding: 4 } },
+					_react2.default.createElement(
+						P,
+						null,
+						number
+					),
+					_react2.default.createElement(Title, { title: acronym })
+				);
+			}
+		}]);
+
+		return Element;
+	}(_react.Component);
+
+	var Title = function (_Component2) {
+		_inherits(Title, _Component2);
+
+		function Title() {
+			_classCallCheck(this, Title);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(Title).apply(this, arguments));
+		}
+
+		_createClass(Title, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'h4',
+					{ style: { margin: '0', padding: 0, textAlign: 'center' } },
+					' ',
+					this.props.title,
+					' '
+				);
+			}
+		}]);
+
+		return Title;
+	}(_react.Component);
+
+	var P = function (_Component3) {
+		_inherits(P, _Component3);
+
+		function P() {
+			_classCallCheck(this, P);
+
+			return _possibleConstructorReturn(this, Object.getPrototypeOf(P).apply(this, arguments));
+		}
+
+		_createClass(P, [{
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'p',
+					{ style: { margin: '0', padding: 0, textAlign: 'center' } },
+					this.props.children
+				);
+			}
+		}]);
+
+		return P;
+	}(_react.Component);
+
+	//------------------------------------------------------------------------------
+	// DATA
+	//------------------------------------------------------------------------------
+
+	var A1 = [{ number: 5, name: "Hydrogen", acronym: "H", weight: 1.008 }, { number: 3, name: "Lithium", acronym: "L", weight: 6.94 }, { number: 11, name: "Sodium", acronym: "Na", weight: 22.98976928 }, { number: 19, name: "Potassium", acronym: "K", weight: 39.0983 }, { number: 37, name: "Rubidium", acronym: "Rb", weight: 85.4678 }, { number: 55, name: "Caesium", acronym: "Cs", weight: 132.90545196 }, { number: 87, name: "Francium", acronym: "Fr", weight: 223 }];
+	var A2 = [{ number: 4, name: "Beryllium", acronym: "Be", weight: 9.0121831 }, { number: 12, name: "Magnesium", acronym: "Mg", weight: 24.305 }, { number: 20, name: "Calcium", acronym: "Ca", weight: 40.078 }, { number: 38, name: "Strontium", acronym: "Sr", weight: 87.62 }, { number: 56, name: "Barium", acronym: "Ba", weight: 137.327 }, { number: 88, name: "Radium", acronym: "Ra", weight: 226 }];
+	var A3 = [{ number: 5, name: "Boron", acronym: "B", weight: 10.81 }, { number: 13, name: "Aluminum", acronym: "Al", weight: 26.9815385 }, { number: 31, name: "Gallium", acronym: "Ga", weight: 69.723 }, { number: 49, name: "Indium", acronym: "In", weight: 114.818 }, { number: 81, name: "Thallium", acronym: "Tl", weight: 204.38 }, { number: 113, name: "Ununtrium", acronym: "Uut", weight: 284 }];
+	var A4 = [{ number: 6, name: "Carbon", acronym: "C", weight: 12.011 }, { number: 14, name: "Silicon", acronym: "Si", weight: 18.085 }, { number: 32, name: "Germanium", acronym: "Ge", weight: 72.63 }, { number: 50, name: "Tin", acronym: "Sn", weight: 118.710 }, { number: 82, name: "Lead", acronym: "Pb", weight: 207.2 }, { number: 114, name: "Flerovium", acronym: "Fl", weight: 289 }];
+	var A5 = [{ number: 7, name: "Nitrogen", acronym: "N", weight: 14.007 }, { number: 15, name: "Phosphorus", acronym: "P", weight: 30.973761998 }, { number: 33, name: "Arsenic", acronym: "As", weight: 74.921595 }, { number: 51, name: "Antimony", acronym: "Sb", weight: 121.760 }, { number: 83, name: "Bismuth", acronym: "Bi", weight: 208.98040 }, { number: 115, name: "Unumpentium", acronym: "Uup", weight: 288 }];
+	var A6 = [{ number: 8, name: "Oxygen", acronym: "O", weight: 15.999 }, { number: 16, name: "Sulfur", acronym: "S", weight: 32.06 }, { number: 34, name: "Selenium", acronym: "Se", weight: 78.971 }, { number: 52, name: "Tellurium", acronym: "Te", weight: 127.60 }, { number: 84, name: "Polonium", acronym: "Po", weight: 209 }, { number: 116, name: "Lovemorium", acronym: "Li", weight: 293 }];
+	var A7 = [{ number: 9, name: "Fluorine", acronym: "F", weight: 18.998403163 }, { number: 17, name: "Chlorine", acronym: "Cl", weight: 35.45 }, { number: 35, name: "Bromine", acronym: "Br", weight: 79.904 }, { number: 53, name: "Iodine", acronym: "I", weight: 126.90447 }, { number: 85, name: "Astatine", acronym: "At", weight: 210 }, { number: 117, name: "Ununseptium", acronym: "Uus", weight: 294 }];
+	var A8 = [{ number: 2, name: "Helium", acronym: "He", weight: 4.002602 }, { number: 10, name: "Neon", acronym: "Ne", weight: 20.1797 }, { number: 18, name: "Argon", acronym: "Ar", weight: 39.948 }, { number: 36, name: "Krypton", acronym: "Kr", weight: 83.798 }, { number: 54, name: "Xenon", acronym: "Xe", weight: 131.293 }, { number: 86, name: "Radon", acronym: "Rn", weight: 222 }, { number: 118, name: "Ununoctium", acronym: "Uuo", weight: 294 }];
+
+	//------------------------------------------------------------------------------
+	//
+	//------------------------------------------------------------------------------
+
+	var a1Elements = A1.map(function (item, index) {
+		var number = item.number;
+		var name = item.name;
+		var acronym = item.acronym;
+		var weight = item.weight;
+
+		return _react2.default.createElement(Element, { number: number, name: name, acronym: acronym, weight: weight });
+	});
+
+	var a2Elements = A2.map(function (item, index) {
+		var number = item.number;
+		var name = item.name;
+		var acronym = item.acronym;
+		var weight = item.weight;
+
+		return _react2.default.createElement(Element, { number: number, name: name, acronym: acronym, weight: weight });
+	});
+
+	var a3Elements = A3.map(function (item, index) {
+		var number = item.number;
+		var name = item.name;
+		var acronym = item.acronym;
+		var weight = item.weight;
+
+		return _react2.default.createElement(Element, { number: number, name: name, acronym: acronym, weight: weight });
+	});
+
+	var a4Elements = A4.map(function (item, index) {
+		var number = item.number;
+		var name = item.name;
+		var acronym = item.acronym;
+		var weight = item.weight;
+
+		return _react2.default.createElement(Element, { number: number, name: name, acronym: acronym, weight: weight });
+	});
+
+	var a5Elements = A5.map(function (item, index) {
+		var number = item.number;
+		var name = item.name;
+		var acronym = item.acronym;
+		var weight = item.weight;
+
+		return _react2.default.createElement(Element, { number: number, name: name, acronym: acronym, weight: weight });
+	});
+
+	var a6Elements = A6.map(function (item, index) {
+		var number = item.number;
+		var name = item.name;
+		var acronym = item.acronym;
+		var weight = item.weight;
+
+		return _react2.default.createElement(Element, { number: number, name: name, acronym: acronym, weight: weight });
+	});
+
+	var a7Elements = A7.map(function (item, index) {
+		var number = item.number;
+		var name = item.name;
+		var acronym = item.acronym;
+		var weight = item.weight;
+
+		return _react2.default.createElement(Element, { number: number, name: name, acronym: acronym, weight: weight });
+	});
+
+	var a8Elements = A8.map(function (item, index) {
+		var number = item.number;
+		var name = item.name;
+		var acronym = item.acronym;
+		var weight = item.weight;
+
+		return _react2.default.createElement(Element, { number: number, name: name, acronym: acronym, weight: weight });
+	});
+
+	render(_react2.default.createElement(
+		'div',
+		null,
+		_react2.default.createElement(
+			'div',
+			{ style: { float: 'left' } },
+			a1Elements
+		),
+		_react2.default.createElement(
+			'div',
+			{ style: { float: 'left' } },
+			_react2.default.createElement(Element, null),
+			a2Elements
+		),
+		_react2.default.createElement(
+			'div',
+			{ style: { float: 'left' } },
+			_react2.default.createElement(Element, null),
+			a3Elements
+		),
+		_react2.default.createElement(
+			'div',
+			{ style: { float: 'left' } },
+			_react2.default.createElement(Element, null),
+			a4Elements
+		),
+		_react2.default.createElement(
+			'div',
+			{ style: { float: 'left' } },
+			_react2.default.createElement(Element, null),
+			a5Elements
+		),
+		_react2.default.createElement(
+			'div',
+			{ style: { float: 'left' } },
+			_react2.default.createElement(Element, null),
+			a6Elements
+		),
+		_react2.default.createElement(
+			'div',
+			{ style: { float: 'left' } },
+			_react2.default.createElement(Element, null),
+			a7Elements
+		),
+		_react2.default.createElement(
+			'div',
+			{ style: { float: 'left' } },
+			a8Elements
+		)
 	), document.getElementById('root'));
-
-	// document.write('it works!')
 
 /***/ },
 /* 1 */
