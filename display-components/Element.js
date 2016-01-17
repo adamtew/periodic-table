@@ -5,21 +5,32 @@ const propTypes = {
 }
 
 export default class Element extends Component {
-	speak() {
-		console.log('my props are', this.props)
+	componentWillMount() {
+		this.setState({ backgroundColor: 'white' })
+	}
+
+	handleMouseOver() {
+		this.setState({ backgroundColor: 'yellow' })
 		this.props.onElementHover(this.props)
+	}
+
+	handleMouseOut() {
+		this.setState({ backgroundColor: 'white' })
 	}
 	render() {
 		const { children, number, name, acronym, weight } = this.props;
+		const { backgroundColor } = this.state
 		return(
 			<div 
 				style={{ 
+					backgroundColor,
 					height: 35,
 					width: 35,
 					border: '1px solid silver', 
 					padding: 4,
 				}}
-				onMouseOver={ this.speak.bind(this) }
+				onMouseOver={ this.handleMouseOver.bind(this) }
+				onMouseOut={ this.handleMouseOut.bind(this) }
 			> 
 				<P>{ number }</P>
 				<Title title={ acronym } />

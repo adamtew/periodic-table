@@ -10670,7 +10670,7 @@
 	// DATA
 	//------------------------------------------------------------------------------
 
-	var A1 = exports.A1 = [{ number: 5, name: "Hydrogen", acronym: "H", weight: 1.008 }, { number: 3, name: "Lithium", acronym: "L", weight: 6.94 }, { number: 11, name: "Sodium", acronym: "Na", weight: 22.98976928 }, { number: 19, name: "Potassium", acronym: "K", weight: 39.0983 }, { number: 37, name: "Rubidium", acronym: "Rb", weight: 85.4678 }, { number: 55, name: "Caesium", acronym: "Cs", weight: 132.90545196 }, { number: 87, name: "Francium", acronym: "Fr", weight: 223 }];
+	var A1 = exports.A1 = [{ number: 1, name: "Hydrogen", acronym: "H", weight: 1.008 }, { number: 3, name: "Lithium", acronym: "L", weight: 6.94 }, { number: 11, name: "Sodium", acronym: "Na", weight: 22.98976928 }, { number: 19, name: "Potassium", acronym: "K", weight: 39.0983 }, { number: 37, name: "Rubidium", acronym: "Rb", weight: 85.4678 }, { number: 55, name: "Caesium", acronym: "Cs", weight: 132.90545196 }, { number: 87, name: "Francium", acronym: "Fr", weight: 223 }];
 
 	var A2 = exports.A2 = [{ number: null, name: "", acronym: "", weight: null }, { number: 4, name: "Beryllium", acronym: "Be", weight: 9.0121831 }, { number: 12, name: "Magnesium", acronym: "Mg", weight: 24.305 }, { number: 20, name: "Calcium", acronym: "Ca", weight: 40.078 }, { number: 38, name: "Strontium", acronym: "Sr", weight: 87.62 }, { number: 56, name: "Barium", acronym: "Ba", weight: 137.327 }, { number: 88, name: "Radium", acronym: "Ra", weight: 226 }];
 
@@ -10744,10 +10744,20 @@
 		}
 
 		_createClass(Element, [{
-			key: 'speak',
-			value: function speak() {
-				console.log('my props are', this.props);
+			key: 'componentWillMount',
+			value: function componentWillMount() {
+				this.setState({ backgroundColor: 'white' });
+			}
+		}, {
+			key: 'handleMouseOver',
+			value: function handleMouseOver() {
+				this.setState({ backgroundColor: 'yellow' });
 				this.props.onElementHover(this.props);
+			}
+		}, {
+			key: 'handleMouseOut',
+			value: function handleMouseOut() {
+				this.setState({ backgroundColor: 'white' });
 			}
 		}, {
 			key: 'render',
@@ -10758,17 +10768,20 @@
 				var name = _props.name;
 				var acronym = _props.acronym;
 				var weight = _props.weight;
+				var backgroundColor = this.state.backgroundColor;
 
 				return _react2.default.createElement(
 					'div',
 					{
 						style: {
+							backgroundColor: backgroundColor,
 							height: 35,
 							width: 35,
 							border: '1px solid silver',
 							padding: 4
 						},
-						onMouseOver: this.speak.bind(this)
+						onMouseOver: this.handleMouseOver.bind(this),
+						onMouseOut: this.handleMouseOut.bind(this)
 					},
 					_react2.default.createElement(
 						P,
@@ -11034,6 +11047,7 @@
 			_this2.handleElementHover = _this2.handleElementHover.bind(_this2);
 			return _this2;
 		}
+
 		//------------------------------------------------------------------------------
 		// Lifecycle Events
 		//------------------------------------------------------------------------------

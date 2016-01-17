@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import Element from '../display-components/Element';
-import FullElement from '../display-components/FullElement';
+import Element from 'Element';
+import FullElement from 'FullElement';
 import { 
 	A1, A2, B1, B2, B3, B4, B5, B6, B7, B8, B9, B10, A3, A4, A5, A6, A7, A8
 } from '../data/elements'
@@ -20,7 +20,7 @@ export default class App extends Component {
 		this.makeColumn = this.makeColumn.bind(this);
 		this.handleElementHover = this.handleElementHover.bind(this);
 	}
-	
+
 //------------------------------------------------------------------------------
 // Lifecycle Events 
 //------------------------------------------------------------------------------
@@ -32,6 +32,7 @@ export default class App extends Component {
 //------------------------------------------------------------------------------
 // User Defined Functions
 //------------------------------------------------------------------------------
+
 	makeColumn(arrayOfElements) {
 		return arrayOfElements.map((item, index) => {
 			const { number, name, acronym, weight } = item;

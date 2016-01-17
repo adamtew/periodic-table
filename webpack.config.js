@@ -1,3 +1,4 @@
+var path = require('path');
 var webpack = require('webpack')
 // var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -8,6 +9,10 @@ module.exports = {
 		path: __dirname,
 		filename: "index.js"
 		// publicPath: '/static/'
+	},
+	resolve: {
+		root: path.resolve('./'),
+		root: path.resolve('./display-components'),
 	},
 	module: {
 		loaders: [
